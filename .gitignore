@@ -1,0 +1,59 @@
+## Ignore arquivos do Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Ignore build
+bin/
+obj/
+
+## Ignore publish
+**/publish/
+**/wwwroot/dist/
+**/wwwroot/build/
+
+## Ignore pacotes NuGet baixados localmente
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+## Ignore arquivos de log e cache
+*.log
+*.tlog
+*.cache
+*.pdb
+
+## Arquivos gerados por ferramentas de build
+*.tmp
+*.bak
+*.swp
+
+## Arquivos de lock
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Ignore do Rider
+.idea/
+*.sln.iml
+
+## Ignore do VS Code
+.vscode/
+
+## Ignore do Blazor WebAssembly
+**/wwwroot/service-worker-assets.js
+**/wwwroot/_framework/
+**/wwwroot/_content/
+
+## Ignore do sistema operacional
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+Icon?
+
+## Ignore do Azure Functions (se tiver)
+.local.settings.json
