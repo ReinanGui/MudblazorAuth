@@ -14,6 +14,16 @@ namespace Api
 
             // Add services to the container.
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.WithOrigins("https://localhost:7110")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+            });
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -74,6 +84,8 @@ namespace Api
             app.UseAuthorization();
 
             app.MapControllers();
+
+            app.UseCors();
 
             app.Run();
         }

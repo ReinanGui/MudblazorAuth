@@ -1,4 +1,5 @@
 ﻿using Communication.Requests;
+using Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -18,7 +19,13 @@ namespace Api.Controllers
             {
                 var token = GenerateJwtToken(request.Username);
 
-                return Ok(token);
+                var response = new ResponseAuthLogin()
+                {
+                    Token = token,
+                    TokenExpired = 0
+                };
+
+                return Ok(response);
             }
 
             return Unauthorized("Unauthorized");
